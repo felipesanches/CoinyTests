@@ -1,0 +1,30 @@
+language: python
+before_install:
+- sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+- sudo add-apt-repository --yes ppa:fontforge/fontforge
+- sudo apt-get update -qq
+- sudo apt-get install python-fontforge ttfautohint swig
+- cp /usr/lib/python2.7/dist-packages/fontforge.* "$HOME/virtualenv/python2.7.9/lib/python2.7/site-packages"
+# See issue travis-ci/travis-ci#1379
+- sudo apt-get install -qq g++-4.8
+- export CXX="g++-4.8" CC="gcc-4.8"
+install:
+- pip install Jinja2
+- pip install git+https://github.com/behdad/fontTools.git
+- pip install git+https://github.com/googlefonts/fontcrunch.git
+- pip install git+https://github.com/googlefonts/fontbakery.git
+before_script:
+- mkdir -p builds/$TRAVIS_COMMIT
+script: (set -o pipefail; PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-build.py
+  . 2>&1 | tee -a    builds/$TRAVIS_COMMIT/buildlog.txt)
+after_script:
+- PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-report.py builds/$TRAVIS_COMMIT
+- rm -rf builds/$TRAVIS_COMMIT/sources
+- rm -rf builds/$TRAVIS_COMMIT/build.state.yaml
+- PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-travis-deploy.py
+branches:
+  only:
+  - master
+env:
+  global:
+    secure: aW3NYNt4gtT03/IFAjuSInkZhUMqpl9q6Bi4KECxZ+LLe9/8KrwWAgQ+004oW3ge59A1pfVWk6jKD03nVzTZwenHDsFzysu/MnMieKdPniCGcYCh2F1eQ26QdE+PlWxuHaPk8sdm/ypL5m30VA2MECFzry9i6SOLKHyzixV4xgfIC5/NcxPUVv4yBxuqrkxzVh/GMbO4VyeaHUOwdRXloxYapSGxJMe++2P8pOpHVo7nfMcGuqCNpc8RbwO2sATHCC7GmBRZ4uOcgDhT968Etsx0FtgDf804k4QNcMDRi1dTxP4xmH+TDnXwNnniakfM1z/7wNhlqDgFs9vt0WUy8D0aMx0a/aYP1VWWurxexNElHY4O4lvGUsew476tYWQLTYCRrMxXqFIwCvN2hKxNibG1+t5gi4uLYVYvVv8LIMp2P68rKRbUeKitPQzSDG1QSUaZzSxFnlB/MkZF90Xzb0wMxnx9dYZk/M7okzhBmhRbjdPu+e03S5x7jb+O+sWKUat3ZUDnigaHkT7NN/9MOagy/V50R35Ry2qwNW2Rwxw16ydRuk+jJdhd3PqDnAGnbxb8P0MjhfiyS9Cum0KdJEWwrxdmgd5YOQZLM8IRHIieY7KtPyCmIta5/ue4tVhJaWKUN9Hc6ipy95hME9riSEjF3VhWPpwxgEVRa5cNPAw=
