@@ -1,0 +1,6 @@
+2015:
+ * Marcelo Magalhaes developed this font project.
+
+2015-DEC:
+ * The font project file was loaded into the CoinyTests repository for the purpose of testing the usage of FontBakery
+
