@@ -10,7 +10,7 @@ before_install:
 - export CXX="g++-4.8" CC="gcc-4.8"
 install:
 - pip install Jinja2
-- sudo pip install pyicu
+- pip install pyicu
 - pip install git+https://github.com/behdad/fontTools.git
 - pip install git+https://github.com/googlefonts/fontcrunch.git
 - pip install git+https://github.com/googlefonts/fontbakery.git
