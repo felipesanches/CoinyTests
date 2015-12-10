@@ -2,6 +2,6 @@ commit: HEAD
 compiler: fontforge
 license: OFL.txt
 notes: This is a test. Let's see what happens :-)
-process_files: []
+process_files: [Coiny-Regular2911.sfd]
 pyftsubset: --notdef-outline --name-IDs=* --hinting
 ttfautohint: -l 7 -r 28 -G 50 -x 13 -w "G"
