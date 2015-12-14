@@ -19,6 +19,7 @@ before_script:
 script: (set -o pipefail; PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-build.py
   . 2>&1 | tee -a    builds/$TRAVIS_COMMIT/buildlog.txt)
 after_script:
+- echo "https://${GH_TOKEN}:@github.com"
 - PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-report.py builds/$TRAVIS_COMMIT
 - rm -rf builds/$TRAVIS_COMMIT/sources
 - rm -rf builds/$TRAVIS_COMMIT/build.state.yaml
@@ -28,4 +29,4 @@ branches:
   - master
 env:
   global:
-    secure: aW3NYNt4gtT03/IFAjuSInkZhUMqpl9q6Bi4KECxZ+LLe9/8KrwWAgQ+004oW3ge59A1pfVWk6jKD03nVzTZwenHDsFzysu/MnMieKdPniCGcYCh2F1eQ26QdE+PlWxuHaPk8sdm/ypL5m30VA2MECFzry9i6SOLKHyzixV4xgfIC5/NcxPUVv4yBxuqrkxzVh/GMbO4VyeaHUOwdRXloxYapSGxJMe++2P8pOpHVo7nfMcGuqCNpc8RbwO2sATHCC7GmBRZ4uOcgDhT968Etsx0FtgDf804k4QNcMDRi1dTxP4xmH+TDnXwNnniakfM1z/7wNhlqDgFs9vt0WUy8D0aMx0a/aYP1VWWurxexNElHY4O4lvGUsew476tYWQLTYCRrMxXqFIwCvN2hKxNibG1+t5gi4uLYVYvVv8LIMp2P68rKRbUeKitPQzSDG1QSUaZzSxFnlB/MkZF90Xzb0wMxnx9dYZk/M7okzhBmhRbjdPu+e03S5x7jb+O+sWKUat3ZUDnigaHkT7NN/9MOagy/V50R35Ry2qwNW2Rwxw16ydRuk+jJdhd3PqDnAGnbxb8P0MjhfiyS9Cum0KdJEWwrxdmgd5YOQZLM8IRHIieY7KtPyCmIta5/ue4tVhJaWKUN9Hc6ipy95hME9riSEjF3VhWPpwxgEVRa5cNPAw=
+    secure: hxt/OKtZryjS81Em7ZwLxbY2glVY6w165KIFr2np8S4eSoknpg9QFGiTA6miC91OR1f7AgUgLCWWE3zqyHBKbc3XYsXhUl2ZqAgauawQYiotTzIwsYNSvjNgDbQXyK31yU438tRCl332xa6sx24hjz6POSPspK3neUN+EDvLM7TBDi+/z92GiCDvf1TnlOwVzCUhIc0fOnKrpJzR3qhq5K5NBX1kTG62t9b5O+KpgM5PAoAGiRse1kVZReCT+Tya5cXZlj9UGj8JUhq5JwsHsBsYaqhq9rAYHLlqLwm1W+tYx9tgndnrvULjfPV5z1QCQB4Z1ZdricxK4f7eJWr6HDB5Z4dOiDCwuDU+JFfpYvO0c4SHJpsNei/tlVZpn++YTwbWqJ67VeBMFKdNPc8GvIVg4EUihDbriiLQAHRfMVbYjQ165Sj0QGFeSR1XOsFmcA8NGP3mN2/HSP5by3Wfu43OSWeS03Xt+SmoioUtf5L6/a6Bfa3UoANsTWmyU15uV3/hLBV4nOmKIJ/yR2pHOYgY7mkfSokSti19BKEA2l6luXxYHGitZc7qFsB0lIGfprfnxFdBl0f+6M/tiYGCYm2u8jE21KkLVZdLvb9B+PBOYoilbVd2j8DlZVzdoSZj2VcFnC03Qy95q74tnKSThfD8poRNg5L8BGvJawrZ1VE=
