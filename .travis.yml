@@ -8,12 +8,18 @@ before_install:
 # See issue travis-ci/travis-ci#1379
 - sudo apt-get install -qq g++-4.8
 - export CXX="g++-4.8" CC="gcc-4.8"
+- git clone https://github.com/khaledhosny/ots
+- cd ots
+- ./autogen.sh
+- ./configure
+- make
+- sudo make install
+- cd ..
 install:
-- pip install Jinja2
 - pip install pyicu
 - pip install git+https://github.com/behdad/fontTools.git
 - pip install git+https://github.com/googlefonts/fontcrunch.git
-- pip install git+https://github.com/felipesanches/fontbakery.git@fsanches_experiments
+- pip install git+https://github.com/googlefonts/fontbakery.git
 before_script:
 - mkdir -p builds/$TRAVIS_COMMIT
 script: (set -o pipefail; PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-build.py
