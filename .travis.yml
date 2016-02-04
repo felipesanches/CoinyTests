@@ -23,7 +23,7 @@ install:
 before_script:
 - mkdir -p builds/$TRAVIS_COMMIT
 script: (set -o pipefail; PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-build.py
-  . 2>&1 | uniq | tee -a    builds/$TRAVIS_COMMIT/buildlog.txt)
+  . 2>&1 | tee -a    builds/$TRAVIS_COMMIT/buildlog.txt)
 after_script:
 - PATH=/home/travis/virtualenv/python2.7.9/bin/:$PATH fontbakery-report.py builds/$TRAVIS_COMMIT
 - rm -rf builds/$TRAVIS_COMMIT/sources
