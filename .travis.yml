@@ -17,6 +17,7 @@ before_install:
 - cd ..
 install:
 - pip install pyicu
+- pip install protobuf
 - pip install git+https://github.com/behdad/fontTools.git
 - pip install git+https://github.com/googlefonts/fontcrunch.git
 - pip install git+https://github.com/googlefonts/fontbakery.git
