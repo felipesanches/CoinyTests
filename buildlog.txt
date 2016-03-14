@@ -1,0 +1,142 @@
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_gasp_table_type():  Is GASP table correctly set? : gaspRange[65535] value (2) is not 15
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_gasp_table_type():  Is GASP table correctly set? : gaspRange[65535] value (2) is not 15
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_glyf_table_length():  Is there any unused data at the end of the glyf table? : Glyf table has unreachable data at the end of the table. Expected glyf table length 1602 (from loca table), got length 61884 (difference: 60282)
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_glyf_table_length():  Is there any unused data at the end of the glyf table? : Glyf table has unreachable data at the end of the table. Expected glyf table length 1602 (from loca table), got length 61884 (difference: 60282)
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_no_problematic_formats():  Font contains all required tables? : Font is missing required tables: [head, name, OS/2, maxp, hmtx, cmap, post, hhea] but includes optional tables gasp, loca, GSUB, DSIG, GPOS
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_no_problematic_formats():  Font contains all required tables? : Font is missing required tables: [head, name, OS/2, maxp, hmtx, cmap, post, hhea] but includes optional tables gasp, loca, GSUB, DSIG, GPOS
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_opentype_familyname():  FamilyName matches Windows-only Opentype-specific FamilyName? : '' != u'Coiny Regular'
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_opentype_familyname():  FamilyName matches Windows-only Opentype-specific FamilyName? : '' != u'Coiny Regular'
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific FamilyName set to "Coiny Regular"
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific FamilyName set to "Coiny Regular"
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_opentype_fullname():  Fullname matches Windows-only Opentype-specific Fullname? : '' != u'Coiny'
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_opentype_fullname():  Fullname matches Windows-only Opentype-specific Fullname? : '' != u'Coiny'
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific FullName set to "Coiny"
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific FullName set to "Coiny"
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_stylename_is_under_recommendations():  Style name is one of: 'Regular', 'Italic', 'Bold' or 'Bold Italic'? : '' not found in ['Regular', 'Italic', 'Bold', 'Bold Italic']
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_stylename_is_under_recommendations():  Style name is one of: 'Regular', 'Italic', 'Bold' or 'Bold Italic'? : '' not found in ['Regular', 'Italic', 'Bold', 'Bold Italic']
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific StyleName set to "Regular".
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific StyleName set to "Regular".
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific FamilyName set to "Coiny Regular"
+OK: Coiny-Regular2911.ttf: Fixed: Windows-only Opentype-specific FamilyName set to "Coiny Regular"
+required: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_whitespace_characters():  Font contains glyphs for whitespace characters? : Font is missing the following glyphs: nbsp (0x00A0), tab (0x0009).
+required: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_check_whitespace_characters():  Font contains glyphs for whitespace characters? : Font is missing the following glyphs: nbsp (0x00A0), tab (0x0009).
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_epar_in_keys():  EPAR table present in font? : No
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_epar_in_keys():  EPAR table present in font? : No
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_font_unencoded_glyphs():  Is there any unencoded glyph? : There are unencoded glyphs
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_font_unencoded_glyphs():  Is there any unencoded glyph? : There are unencoded glyphs
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_font_unencoded_glyphs():  Is there any unencoded glyph? : There are unencoded glyphs
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_font_unencoded_glyphs():  Is there any unencoded glyph? : There are unencoded glyphs
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+The glyph named Tcommaaccent is mapped to U+021A.
+But its name indicates it should be mapped to U+0162.
+The glyph named tcommaaccent is mapped to U+021B.
+But its name indicates it should be mapped to U+0163.
+The glyph named uni0082 is mapped to U+F0317.
+But its name indicates it should be mapped to U+0082.
+The glyph named uni0083 is mapped to U+F0318.
+But its name indicates it should be mapped to U+0083.
+The glyph named uni0084 is mapped to U+F0319.
+But its name indicates it should be mapped to U+0084.
+The glyph named uni0085 is mapped to U+F031A.
+But its name indicates it should be mapped to U+0085.
+The glyph named uni0087 is mapped to U+F031B.
+But its name indicates it should be mapped to U+0087.
+The glyph named uni0089 is mapped to U+F031C.
+But its name indicates it should be mapped to U+0089.
+The glyph named uni008A is mapped to U+F031D.
+But its name indicates it should be mapped to U+008A.
+The glyph named uni008B is mapped to U+F031E.
+But its name indicates it should be mapped to U+008B.
+The glyph named circumflex is mapped to U+F031F.
+But its name indicates it should be mapped to U+02C6.
+required: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_metrics_ascents_equal_bbox():  Ascent values are same as max glyph point? : [Coiny-Regular2911.ttf] ascents differ to maximum value: 1311
+required: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_metrics_ascents_equal_bbox():  Ascent values are same as max glyph point? : [Coiny-Regular2911.ttf] ascents differ to maximum value: 1311
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_metrics_descents_equal_bbox():  Check that descents values are same as min glyph point : [Coiny-Regular2911.ttf] ascents differ to minimum value: -546
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_metrics_descents_equal_bbox():  Check that descents values are same as min glyph point : [Coiny-Regular2911.ttf] ascents differ to minimum value: -546
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_metrics_linegaps_are_zero():  Linegaps in tables are zero? : [Coiny-Regular2911.ttf] have not zero linegaps
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_metrics_linegaps_are_zero():  Linegaps in tables are zero? : [Coiny-Regular2911.ttf] have not zero linegaps
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_apache_license():  Is the Apache License specified in name ID 13 (License description)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_apache_license():  Is the Apache License specified in name ID 13 (License description)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_apache_license_url():  Is the Apache License specified in name ID 14 (License info URL)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_apache_license_url():  Is the Apache License specified in name ID 14 (License info URL)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_ofl_license():  Is the Open Font License specified in name ID 13 (License description)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_ofl_license():  Is the Open Font License specified in name ID 13 (License description)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_ofl_license_url():  Is the Open Font License specified in name ID 14 (License info URL)?
+required: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_name_id_ofl_license_url():  Is the Open Font License specified in name ID 14 (License info URL)?
+required: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_nbsp():  Font has 'NO-BREAK SPACE' character? : NO-BREAK SPACE does not exist in font
+required: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_nbsp():  Font has 'NO-BREAK SPACE' character? : NO-BREAK SPACE does not exist in font
+note: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_prep_magic_code():  Font contains magic code in PREP table? : 0
+note: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_prep_magic_code():  Font contains magic code in PREP table? : 0
+info: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_source_ttf_font_filename_equals_familystyle():  Source TTF Font filename equals family style? : 'CoinyRegular-Regular.ttf' != 'Coiny-Regular2911.ttf'
+info: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_source_ttf_font_filename_equals_familystyle():  Source TTF Font filename equals family style? : 'CoinyRegular-Regular.ttf' != 'Coiny-Regular2911.ttf'
+$ mv /home/travis/build/felipesanches/CoinyTests/builds/d45c5d6f79a9f6772b92cdb524ba8492a6a9f757/Coiny-Regular2911.ttf CoinyRegular-Regular.ttf
+$ mv /home/travis/build/felipesanches/CoinyTests/builds/d45c5d6f79a9f6772b92cdb524ba8492a6a9f757/Coiny-Regular2911.ttf CoinyRegular-Regular.ttf
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_ttx_duplicate_glyphs():  Font contains unique glyph names? : Font contains incorrectly named glyph uni0082#1
+note: FAIL: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_ttx_duplicate_glyphs():  Font contains unique glyph names? : Font contains incorrectly named glyph uni0082#1
+note: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_ttx_family_naming_recommendation():  Font follows the family naming recommendations? : 0
+note: ERROR: bakery_lint/fonttests/test_ttf.py: TTFTestCase.test_ttx_family_naming_recommendation():  Font follows the family naming recommendations? : 0
+The following table(s) in the font have been ignored by FontForge
+  Ignoring 'DSIG' digital signature table
+The glyph named Tcommaaccent is mapped to U+021A.
+But its name indicates it should be mapped to U+0162.
+The glyph named tcommaaccent is mapped to U+021B.
+But its name indicates it should be mapped to U+0163.
+The glyph named uni0082 is mapped to U+F0317.
+But its name indicates it should be mapped to U+0082.
+The glyph named uni0083 is mapped to U+F0318.
+But its name indicates it should be mapped to U+0083.
+The glyph named uni0084 is mapped to U+F0319.
+But its name indicates it should be mapped to U+0084.
+The glyph named uni0085 is mapped to U+F031A.
+But its name indicates it should be mapped to U+0085.
+The glyph named uni0087 is mapped to U+F031B.
+But its name indicates it should be mapped to U+0087.
+The glyph named uni0089 is mapped to U+F031C.
+But its name indicates it should be mapped to U+0089.
+The glyph named uni008A is mapped to U+F031D.
+But its name indicates it should be mapped to U+008A.
+The glyph named uni008B is mapped to U+F031E.
+But its name indicates it should be mapped to U+008B.
+The glyph named circumflex is mapped to U+F031F.
+But its name indicates it should be mapped to U+02C6.
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_duplicate_glyphs():  Glyph names are unique? : No. But they should.
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_duplicate_glyphs():  Glyph names are unique? : No. But they should.
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_missing_extrema_in_glyphs():  Glyphs have points at extremas : True is not false
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_missing_extrema_in_glyphs():  Glyphs have points at extremas : True is not false
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_validation_glyph_intersect():  Contours do not intersect : True is not false
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_validation_glyph_intersect():  Contours do not intersect : True is not false
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_wrong_direction_in_glyphs():  Contours have correct directions : True is not false
+note: FAIL: bakery_lint/fonttests/test_ttf.py: FontForgeValidateStateTest.test_wrong_direction_in_glyphs():  Contours have correct directions : True is not false
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataSubsetsListTest.test_charset_latin(): CoinyRegular-Regular.latin is real TrueType file: CoinyRegular-Regular.latin subset does not exist
+ER: no fontDesc string found!
+ER: no DesignerName string found!
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataSubsetsListTest.test_charset_latin(): CoinyRegular-Regular.latin is real TrueType file: CoinyRegular-Regular.latin subset does not exist
+note: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_family_is_listed_in_gwf():  Fontfamily is listed in Google Font Directory ? : No family found in GWF in http://fonts.googleapis.com/css?family=Coiny
+note: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_family_is_listed_in_gwf():  Fontfamily is listed in Google Font Directory ? : No family found in GWF in http://fonts.googleapis.com/css?family=Coiny
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_metadata_atleast_latin_menu_subsets_exist():  METADATA.pb subsets should have at least 'menu' and 'latin' : Subsets missing menu
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_metadata_atleast_latin_menu_subsets_exist():  METADATA.pb subsets should have at least 'menu' and 'latin' : Subsets missing menu
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_metadata_designer_exists_in_profiles_csv():  Designer exists in GWF profiles.csv ? : Designer Multiple Designers is not in profiles.csv
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_metadata_designer_exists_in_profiles_csv():  Designer exists in GWF profiles.csv ? : Designer Multiple Designers is not in profiles.csv
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_metadata_license():  METADATA.pb license is 'Apache2', 'UFL' or 'OFL' ? : u'' not found in ['Apache2', 'OFL', 'UFL']
+required: FAIL: bakery_lint/fonttests/test_metadata.py: MetadataTest.test_metadata_license():  METADATA.pb license is 'Apache2', 'UFL' or 'OFL' ? : u'' not found in ['Apache2', 'OFL', 'UFL']
+required: FAIL: bakery_lint/fonttests/test_metadata.py: TestFontOnDiskFamilyEqualToMetadataProtoBuf.test_font_on_disk_family_equal_in_metadata_protobuf():  Font on disk and in METADATA.pb have the same family name ? : Unmatched family name are in fonts: CoinyRegular-Regular.ttf
+required: FAIL: bakery_lint/fonttests/test_metadata.py: TestFontOnDiskFamilyEqualToMetadataProtoBuf.test_font_on_disk_family_equal_in_metadata_protobuf():  Font on disk and in METADATA.pb have the same family name ? : Unmatched family name are in fonts: CoinyRegular-Regular.ttf
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_font_name_matches_family():  METADATA.pb fonts 'name' property should be same as font familyname : "fonts.name" property is not the same as TTF familyname
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_font_name_matches_family():  METADATA.pb fonts 'name' property should be same as font familyname : "fonts.name" property is not the same as TTF familyname
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname():  METADATA.pb font item fields "name", "postScriptName", "fullName", "filename" contains font name right format ? : u'Coiny Regular' not found in u'Coiny'
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_metadata_fonts_fields_have_fontname():  METADATA.pb font item fields "name", "postScriptName", "fullName", "filename" contains font name right format ? : u'Coiny Regular' not found in u'Coiny'
+required: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName():  METADATA.pb `fullName` matches `postScriptName` ? : "Coiny" does not match "Coiny-Regular"
+required: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_metadata_fullname_matches_postScriptName():  METADATA.pb `fullName` matches `postScriptName` ? : "Coiny" does not match "Coiny-Regular"
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_metadata_regular_is_normal():  Usually Regular should be normal style : False is not true
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataAgreements.test_metadata_regular_is_normal():  Usually Regular should be normal style : False is not true
+info: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataContainsReservedFontName.test_copyright_matches_pattern():  Copyright notice matches canonical pattern? : Copyright notice is okay, but it lacks an email address. Expected pattern is: 'Copyright 2016 Author Name (name@site.com)'
+info: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataContainsReservedFontName.test_copyright_matches_pattern():  Copyright notice matches canonical pattern? : Copyright notice is okay, but it lacks an email address. Expected pattern is: 'Copyright 2016 Author Name (name@site.com)'
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable():  Metadata key-value match to table name fields : Coiny: Family name was supposed to be "Coiny" but is "Coiny Regular"
+note: FAIL: bakery_lint/fonttests/test_metadata.py: CheckMetadataMatchesNameTable.test_check_metadata_matches_nametable():  Metadata key-value match to table name fields : Coiny: Family name was supposed to be "Coiny" but is "Coiny Regular"
+note: ERROR: bakery_lint/fonttests/test_metadata.py: CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs():  Check menu file contains proper glyphs
+note: ERROR: bakery_lint/fonttests/test_metadata.py: CheckMenuSubsetContainsProperGlyphs.test_check_menu_contains_proper_glyphs():  Check menu file contains proper glyphs
+required: FAIL: bakery_lint/fonttests/test_metadata.py: CheckFontsMenuAgreements.test_menu_file_agreement():  Check fonts have corresponding menu files : CoinyRegular-Regular.menu does not exist
+required: FAIL: bakery_lint/fonttests/test_metadata.py: CheckFontsMenuAgreements.test_menu_file_agreement():  Check fonts have corresponding menu files : CoinyRegular-Regular.menu does not exist
+required: FAIL: bakery_lint/fonttests/test_metadata.py: CheckCanonicalFilenames.test_check_canonical_filenames():  Filename is set canonically? : Coiny-Regular.ttf != CoinyRegular-Regular.ttf
+required: FAIL: bakery_lint/fonttests/test_metadata.py: CheckCanonicalFilenames.test_check_canonical_filenames():  Filename is set canonically? : Coiny-Regular.ttf != CoinyRegular-Regular.ttf

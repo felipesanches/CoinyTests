@@ -1,0 +1,92 @@
+Coiny-Regular2911.sfd:
+  error: []
+  failure: []
+  fixed: []
+  passed: true
+  success: []
+Project:
+  error: []
+  failure: []
+  fixed: []
+  passed: true
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: Each font in family has matching glyph names?
+    methodName: test_family_glyph_names_match
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: &id001 [upstream-repo]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that glyphs has same number of contours across family
+    methodName: test_font_prepolation_glyph_contours
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: *id001
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that glyphs has same number of points across family
+    methodName: test_font_prepolation_glyph_points
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: *id001
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font folder should contain COPYRIGHT.txt
+    methodName: test_copyrighttxt_exists
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: &id002 [upstream-repo]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font folder should contain DESCRIPTION.en_us.html
+    methodName: test_description_exists
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font folder should contain FONTLOG.txt
+    methodName: test_fontlogtxt_exists
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font folder should contain LICENSE.txt
+    methodName: test_licensetxt_exists
+    name: bakery_lint.fonttests.test_upstream
+    tags: [required]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Repository contains bakery.yaml configuration file?
+    methodName: test_bakery_yaml_exists
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: &id003 [upstream-repo]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Each font copyright notice matches?
+    methodName: test_copyright_notices_same_across_family
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: *id003
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Repository contains METADATA.pb file?
+    methodName: test_metadata_pb_exists
+    name: bakery_lint.fonttests.test_upstream
+    tags: [note]
+    targets: *id003
+    tool: lint

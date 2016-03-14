@@ -1,0 +1,66 @@
+Fonts
+  Font:
+    Filename: CoinyRegular-Regular.ttf
+    Common name: Coiny Regular
+    Sub family: Regular
+    Weight: normal
+    Fixed width: no
+    Fixed sizes: yes
+    Copyright: Copyright (c) 2015, Marcelo Magalhaes
+    License: Copyright (c) 2015, fabiana ruggiero (<URL|email>),
+    License url: http://scripts.sil.org/OFL
+    Version: Version 001.000; ttfautohint (v1.1.107-9830) -l 7 -r 28 -G 50 -x 13 -D latn -f none -w G -X ""
+    Glyph count: 800
+    Character count: 683
+    Orthographies:
+        Orthography:
+          Glyphs in set: 86
+          Glyphs in font: 85
+          Percent coverage: 98
+          Common name: Subset vietnamese
+          Support level: partial
+        Orthography:
+          Glyphs in set: 216
+          Glyphs in font: 211
+          Percent coverage: 97
+          Common name: Subset latin
+          Support level: partial
+        Orthography:
+          Glyphs in set: 9
+          Glyphs in font: 3
+          Percent coverage: 33
+          Common name: Subset cyrillic-menu
+          Support level: fragmentary
+        Orthography:
+          Glyphs in set: 824
+          Glyphs in font: 251
+          Percent coverage: 30
+          Common name: Subset latin-ext
+          Support level: fragmentary
+        Orthography:
+          Glyphs in set: 13
+          Glyphs in font: 3
+          Percent coverage: 23
+          Common name: Subset greek-menu
+          Support level: fragmentary
+        Orthography:
+          Glyphs in set: 176
+          Glyphs in font: 8
+          Percent coverage: 4
+          Common name: Subset devanagari
+          Support level: fragmentary
+        Orthography:
+          Glyphs in set: 144
+          Glyphs in font: 2
+          Percent coverage: 1
+          Common name: Subset greek
+          Support level: fragmentary
+        Orthography:
+          Glyphs in set: 101
+          Glyphs in font: 2
+          Percent coverage: 1
+          Common name: Subset telugu
+          Support level: fragmentary
+        Orthography:
+          Common name: Subset vietnamese-menu
+          Support level: full

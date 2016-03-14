@@ -1,0 +1,594 @@
+error:
+- autofix: true
+  err_msg: ''
+  methodDoc: Is the Apache License specified in name ID 13 (License description)?
+  methodName: test_name_id_apache_license
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: &id001 [result]
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is the Apache License specified in name ID 14 (License info URL)?
+  methodName: test_name_id_apache_license_url
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is the Open Font License specified in name ID 13 (License description)?
+  methodName: test_name_id_ofl_license
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is the Open Font License specified in name ID 14 (License info URL)?
+  methodName: test_name_id_ofl_license_url
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: '0'
+  methodDoc: Font contains magic code in PREP table?
+  methodName: test_prep_magic_code
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: '0'
+  methodDoc: Font follows the family naming recommendations?
+  methodName: test_ttx_family_naming_recommendation
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+failure:
+- autofix: true
+  err_msg: gaspRange[65535] value (2) is not 15
+  methodDoc: Is GASP table correctly set?
+  methodName: test_check_gasp_table_type
+  name: bakery_lint.fonttests.test_ttf
+  tags: &id003 [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: 'Glyf table has unreachable data at the end of the table. Expected glyf
+    table length 1602 (from loca table), got length 61884 (difference: 60282)'
+  methodDoc: Is there any unused data at the end of the glyf table?
+  methodName: test_check_glyf_table_length
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: 'Font is missing required tables: [head, name, OS/2, maxp, hmtx, cmap,
+    post, hhea] but includes optional tables gasp, loca, GSUB, DSIG, GPOS'
+  methodDoc: Font contains all required tables?
+  methodName: test_check_no_problematic_formats
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''''' != u''Coiny Regular'''
+  methodDoc: FamilyName matches Windows-only Opentype-specific FamilyName?
+  methodName: test_check_opentype_familyname
+  name: bakery_lint.fonttests.test_ttf
+  tags: &id004 [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''''' != u''Coiny'''
+  methodDoc: Fullname matches Windows-only Opentype-specific Fullname?
+  methodName: test_check_opentype_fullname
+  name: bakery_lint.fonttests.test_ttf
+  tags: &id005 [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''''' not found in [''Regular'', ''Italic'', ''Bold'', ''Bold Italic'']'
+  methodDoc: 'Style name is one of: ''Regular'', ''Italic'', ''Bold'' or ''Bold Italic''?'
+  methodName: test_check_stylename_is_under_recommendations
+  name: bakery_lint.fonttests.test_ttf
+  tags: &id006 [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: 'Font is missing the following glyphs: nbsp (0x00A0), tab (0x0009).'
+  methodDoc: Font contains glyphs for whitespace characters?
+  methodName: test_check_whitespace_characters
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: 'No'
+  methodDoc: EPAR table present in font?
+  methodName: test_epar_in_keys
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: There are unencoded glyphs
+  methodDoc: Is there any unencoded glyph?
+  methodName: test_font_unencoded_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: &id007 [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: '[Coiny-Regular2911.ttf] ascents differ to maximum value: 1311'
+  methodDoc: Ascent values are same as max glyph point?
+  methodName: test_metrics_ascents_equal_bbox
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: '[Coiny-Regular2911.ttf] ascents differ to minimum value: -546'
+  methodDoc: Check that descents values are same as min glyph point
+  methodName: test_metrics_descents_equal_bbox
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: '[Coiny-Regular2911.ttf] have not zero linegaps'
+  methodDoc: Linegaps in tables are zero?
+  methodName: test_metrics_linegaps_are_zero
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: NO-BREAK SPACE does not exist in font
+  methodDoc: Font has 'NO-BREAK SPACE' character?
+  methodName: test_nbsp
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: '''CoinyRegular-Regular.ttf'' != ''Coiny-Regular2911.ttf'''
+  methodDoc: Source TTF Font filename equals family style?
+  methodName: test_source_ttf_font_filename_equals_familystyle
+  name: bakery_lint.fonttests.test_ttf
+  tags: &id008 [info]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: Font contains incorrectly named glyph uni0082#1
+  methodDoc: Font contains unique glyph names?
+  methodName: test_ttx_duplicate_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: No. But they should.
+  methodDoc: Glyph names are unique?
+  methodName: test_duplicate_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: &id002 [result]
+  tool: FontForge
+- autofix: false
+  err_msg: True is not false
+  methodDoc: Glyphs have points at extremas
+  methodName: test_missing_extrema_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: True is not false
+  methodDoc: Contours do not intersect
+  methodName: test_validation_glyph_intersect
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: True is not false
+  methodDoc: Contours have correct directions
+  methodName: test_wrong_direction_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+fixed:
+- autofix: true
+  err_msg: ''
+  methodDoc: Font has got a "DSIG" table?
+  methodName: test_check_font_has_dsig_table
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is GASP table correctly set?
+  methodName: test_check_gasp_table_type
+  name: bakery_lint.fonttests.test_ttf
+  tags: *id003
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is there any non-ascii character in NAME or CFF tables?
+  methodName: test_check_names_are_ascii_only
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: White-space characters have identical advanceWidth value?
+  methodName: test_check_nbsp_width_matches_sp_width
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: FamilyName matches Windows-only Opentype-specific FamilyName?
+  methodName: test_check_opentype_familyname
+  name: bakery_lint.fonttests.test_ttf
+  tags: *id004
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Fullname matches Windows-only Opentype-specific Fullname?
+  methodName: test_check_opentype_fullname
+  name: bakery_lint.fonttests.test_ttf
+  tags: *id005
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: 'Style name is one of: ''Regular'', ''Italic'', ''Bold'' or ''Bold Italic''?'
+  methodName: test_check_stylename_is_under_recommendations
+  name: bakery_lint.fonttests.test_ttf
+  tags: *id006
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: There are unencoded glyphs
+  methodDoc: Is there any unencoded glyph?
+  methodName: test_font_unencoded_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: *id007
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is the OS/2 table fsType set to 0?
+  methodName: test_is_fstype_not_set
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is there an `opyright` substring declared in name ID 10?
+  methodName: test_name_id_copyright
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Is there any item with platformID=1 on the NAME table?
+  methodName: test_platformID_1_exists
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Source TTF Font filename equals family style?
+  methodName: test_source_ttf_font_filename_equals_familystyle
+  name: bakery_lint.fonttests.test_ttf
+  tags: *id008
+  targets: *id001
+  tool: lint
+- autofix: true
+  err_msg: ''
+  methodDoc: Family and style names are set canonically?
+  methodName: test_suggested_subfamily_name
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+passed: false
+success:
+- autofix: false
+  err_msg: ''
+  methodDoc: Does full font name begin with the font family name?
+  methodName: test_check_full_font_name_begins_with_family_name
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: MaxAdvanceWidth is consistent with values in the Hmtx and Hhea tables?
+  methodName: test_check_hmtx_hhea_max_advance_width_agreement
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Italic angle is set within a valid range?
+  methodName: test_check_italic_angle_agreement
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Font names are consistent across platforms?
+  methodName: test_check_names_same_across_platforms
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: OS/2 width class is correctly set?
+  methodName: test_check_os2_width_class
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Is Panose value set correctly?
+  methodName: test_check_panose_identification
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: UPM Heights are NOT greater than 120%?
+  methodName: test_check_upm_heigths_less_120
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Font has 'EURO SIGN' character?
+  methodName: test_euro
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: None
+  methodName: test_fontforge_openfile_contains_stderr
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Is fontname identical to macstyle flags?
+  methodName: test_fontname_is_equal_to_macstyle
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Glyph names are all valid?
+  methodName: test_glyphname_does_not_contain_disallowed_chars
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Does GPOS table have kerning information?
+  methodName: test_gpos_table_has_kerning_info
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Check font has a correct license url
+  methodName: test_license_included_in_font_names
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Is there a "KERN" table declared in the font?
+  methodName: test_no_kern_table_exists
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Is TTF file correctly sanitized for Firefox and Chrome?
+  methodName: test_ots
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Font has 'SPACE' character?
+  methodName: test_space
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Version format is correct in NAME table?
+  methodName: test_version_in_name_table_is_in_correct_format
+  name: bakery_lint.fonttests.test_ttf
+  tags: [info]
+  targets: *id001
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Composite glyphs have allowed numbers of paths defined in maxp
+  methodName: test_allowed_numbers_paths_in_composite_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Glyphs have allowed numbers of paths defined in maxp
+  methodName: test_allowed_numbers_paths_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Composite glyphs have allowed numbers of points defined in maxp
+  methodName: test_allowed_numbers_points_in_composite_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Glyphs have allowed numbers of points defined in maxp
+  methodName: test_allowed_numbers_points_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Unicode code points are unique?
+  methodName: test_duplicate_unicode_codepoints
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: References in the glyph haven't been flipped
+  methodName: test_flipped_reference_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Glyphs have all required anchors. (According to the opentype spec, if
+    a glyph contains an anchor point for one anchor class in a subtable, it must contain
+    anchor points for all anchor classes in the subtable. Even it, logically, they
+    do not apply and are unnecessary.)
+  methodName: test_missing_anchors
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Do hints overlap?
+  methodName: test_overlapped_hints
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Points in glyphs are integer aligned
+  methodName: test_points_are_integer_aligned
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Points (or control points) are not too far apart
+  methodName: test_points_are_not_too_far_apart
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: PostScript hasnt a limit of 96 hints in glyphs
+  methodName: test_postscript_hasnt_limit_hints_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Not more than 1,500 points in any glyph (a PostScript limit)
+  methodName: test_postscript_hasnt_limit_points_in_glyphs
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Glyph names referred to from glyphs present in the font
+  methodName: test_referenced_glyphs_are_present
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Font doesn't have invalid glyph names
+  methodName: test_valid_glyph_names
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Glyphs instructions have valid lengths
+  methodName: test_valid_length_instructions
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Contours are closed
+  methodName: test_validation_open_contours
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: *id002
+  tool: FontForge
+- autofix: false
+  err_msg: ''
+  methodDoc: Is font em size (ideally) equal to 1000?
+  methodName: test_em_is_1000
+  name: bakery_lint.fonttests.test_ttf
+  tags: [note]
+  targets: &id009 [result]
+  tool: lint
+- autofix: false
+  err_msg: ''
+  methodDoc: Is this a valid TTF file?
+  methodName: test_font_is_font
+  name: bakery_lint.fonttests.test_ttf
+  tags: [required]
+  targets: *id009
+  tool: lint

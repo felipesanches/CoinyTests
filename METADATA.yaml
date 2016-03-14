@@ -1,0 +1,329 @@
+METADATA.pb:
+  error:
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check menu file contains proper glyphs
+    methodName: test_check_menu_contains_proper_glyphs
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  failure:
+  - autofix: false
+    err_msg: CoinyRegular-Regular.latin subset does not exist
+    methodDoc: CoinyRegular-Regular.latin is real TrueType file
+    methodName: test_charset_latin
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: [metadata]
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: No family found in GWF in http://fonts.googleapis.com/css?family=Coiny
+    methodDoc: Fontfamily is listed in Google Font Directory ?
+    methodName: test_family_is_listed_in_gwf
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: &id001 [metadata]
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: Subsets missing menu
+    methodDoc: METADATA.pb subsets should have at least 'menu' and 'latin'
+    methodName: test_metadata_atleast_latin_menu_subsets_exist
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id001
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: Designer Multiple Designers is not in profiles.csv
+    methodDoc: Designer exists in GWF profiles.csv ?
+    methodName: test_metadata_designer_exists_in_profiles_csv
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id001
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: u'' not found in ['Apache2', 'OFL', 'UFL']
+    methodDoc: METADATA.pb license is 'Apache2', 'UFL' or 'OFL' ?
+    methodName: test_metadata_license
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id001
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: 'Unmatched family name are in fonts: CoinyRegular-Regular.ttf'
+    methodDoc: Font on disk and in METADATA.pb have the same family name ?
+    methodName: test_font_on_disk_family_equal_in_metadata_protobuf
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: '"fonts.name" property is not the same as TTF familyname'
+    methodDoc: METADATA.pb fonts 'name' property should be same as font familyname
+    methodName: test_font_name_matches_family
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: &id002 [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: u'Coiny Regular' not found in u'Coiny'
+    methodDoc: METADATA.pb font item fields "name", "postScriptName", "fullName",
+      "filename" contains font name right format ?
+    methodName: test_metadata_fonts_fields_have_fontname
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: '"Coiny" does not match "Coiny-Regular"'
+    methodDoc: METADATA.pb `fullName` matches `postScriptName` ?
+    methodName: test_metadata_fullname_matches_postScriptName
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: False is not true
+    methodDoc: Usually Regular should be normal style
+    methodName: test_metadata_regular_is_normal
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: 'Copyright notice is okay, but it lacks an email address. Expected pattern
+      is: ''Copyright 2016 Author Name (name@site.com)'''
+    methodDoc: Copyright notice matches canonical pattern?
+    methodName: test_copyright_matches_pattern
+    name: bakery_lint.fonttests.test_metadata
+    tags: [info]
+    targets: &id003 [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: 'Coiny: Family name was supposed to be "Coiny" but is "Coiny Regular"'
+    methodDoc: Metadata key-value match to table name fields
+    methodName: test_check_metadata_matches_nametable
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: CoinyRegular-Regular.menu does not exist
+    methodDoc: Check fonts have corresponding menu files
+    methodName: test_menu_file_agreement
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: Coiny-Regular.ttf != CoinyRegular-Regular.ttf
+    methodDoc: Filename is set canonically?
+    methodName: test_check_canonical_filenames
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: [metadata]
+    tool: lint
+  fixed:
+  - autofix: true
+    err_msg: ''
+    methodDoc: None
+    methodName: test_ensure_designer_simple_short_name
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id001
+    tool: METADATA.pb
+  passed: false
+  success:
+  - autofix: false
+    err_msg: ''
+    methodDoc: METADATA.pb fonts field should only have unique values
+    methodName: test_metadata_fonts_no_dupes
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id001
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: ''
+    methodDoc: METADATA.pb only contains unique style:weight pairs ?
+    methodName: test_metadata_has_unique_style_weight_pairs
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id001
+    tool: METADATA.pb
+  - autofix: false
+    err_msg: ''
+    methodDoc: Checks METADATA.pb 'postScriptName' matches TTF 'postScriptName'
+    methodName: test_postscriptname_in_metadata_equal_to_font_on_disk
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check that METADATA family values are all the same
+    methodName: test_metadata_family_values_are_all_the_same
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: METADATA.pb `filename` matches `postScriptName` ?
+    methodName: test_metadata_filename_matches_postscriptname
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: According GWF standarts font should have Regular style.
+    methodName: test_metadata_font_have_regular
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: METADATA.pb 'fullname' value matches internal 'fullname' ?
+    methodName: test_metadata_fullname_is_equal_to_internal_font_fullname
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Regular should be 400
+    methodName: test_metadata_regular_is_400
+    name: bakery_lint.fonttests.test_metadata
+    tags: [required]
+    targets: *id002
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Copyright notice does not contain Reserved Font Name
+    methodName: test_copyright_contains_correct_rfn
+    name: bakery_lint.fonttests.test_metadata
+    tags: [info]
+    targets: *id003
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Copyright notice is the same in all fonts ?
+    methodName: test_copyright_is_consistent_across_family
+    name: bakery_lint.fonttests.test_metadata
+    tags: [info]
+    targets: *id003
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Copyright notice should be less than 500 chars
+    methodName: test_metadata_copyright_size
+    name: bakery_lint.fonttests.test_metadata
+    tags: [info]
+    targets: *id003
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Monospace font has hhea.advanceWidthMax equal to each glyph's advanceWidth
+      ?
+    methodName: test_check_monospace_agreement
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: METADATA.pb font.style `italic` matches font internals?
+    methodName: test_check_italic_style_matches_names
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check METADATA.pb font.style `italic` matches font internal
+    methodName: test_check_normal_style_matches_names
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: The same unicode encodings of glyphs across family?
+    methodName: test_the_same_encodings_of_glyphs_across_family
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: &id004 [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: The same names of glyphs across family?
+    methodName: test_the_same_names_of_glyphs_across_family
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id004
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: The same number of glyphs across family?
+    methodName: test_the_same_number_of_glyphs_across_family
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: *id004
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check if fontname is not camel cased
+    methodName: test_fontname_not_in_camel_case
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Check font name is the same as family name
+    methodName: test_check_familyname_matches_fontnames
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Weights have canonical value?
+    methodName: test_check_canonical_weights
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Metadata weight matches postScriptName
+    methodName: test_postscriptname_contains_correct_weight
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font weight matches metadata.pb value of key "weight"
+    methodName: test_font_weight_same_as_in_metadata
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: METADATA.pb lists fonts named canonicaly?
+    methodName: test_metadata_contains_current_font
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
+  - autofix: false
+    err_msg: ''
+    methodDoc: Font styles are named canonically?
+    methodName: test_check_canonical_styles
+    name: bakery_lint.fonttests.test_metadata
+    tags: [note]
+    targets: [metadata]
+    tool: lint
